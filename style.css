@@ -15,14 +15,18 @@ body {
 /* ------------------- Container ------------------- */
 .container, .box, .sos-container {
     width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
+    max-width: 500px;      /* bigger width */
+    margin: 60px auto;      /* more space from top and bottom */
+    padding: 35px;          /* more inner space */
+    border-radius: 20px;    /* slightly rounder corners for a softer look */
     background: rgba(255,255,255,0.95);
-    box-shadow: 0 4px 15px rgba(255, 170, 200, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 170, 200, 0.4);  /* deeper shadow */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* centers the content vertically */
 }
+
 
 /* ------------------- Titles ------------------- */
 .title {
@@ -398,3 +402,4 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
