@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ensures proper scaling on all devices -->
     <title>SafeHer - Guardian</title>
-    
-    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
 
@@ -24,7 +21,7 @@
         <button class="action-btn" onclick="notifyGuardian()">Notify Guardian</button>
     </div>
 
-    <a href="homepage.html" class="home-btn" style="margin-top:30px;">Back to Home</a>
+    <a href="homepage.html" class="home-btn">Back to Home</a>
 </div>
 
 <script>
@@ -36,8 +33,8 @@
         lat += (Math.random() - 0.5) / 500;
         lon += (Math.random() - 0.5) / 500;
 
-        document.getElementById("lat").innerHTML = "Latitude: " + lat.toFixed(6);
-        document.getElementById("lon").innerHTML = "Longitude: " + lon.toFixed(6);
+        document.getElementById("lat").textContent = "Latitude: " + lat.toFixed(6);
+        document.getElementById("lon").textContent = "Longitude: " + lon.toFixed(6);
     }
 
     setInterval(updateLocation, 3000);
@@ -50,16 +47,16 @@
     document.body.addEventListener("touchstart", () => lastMove = Date.now());
 
     setInterval(() => {
-        let diff = Date.now() - lastMove;
+        const diff = Date.now() - lastMove;
+        const statusEl = document.getElementById("status");
 
         if (diff > 10000) {
-            document.getElementById("status").innerHTML = "Status: ⚠ Possible distress detected!";
+            statusEl.textContent = "Status: ⚠ Possible distress detected!";
         } else if (diff > 5000) {
-            document.getElementById("status").innerHTML = "Status: User inactive...";
+            statusEl.textContent = "Status: User inactive...";
         } else {
-            document.getElementById("status").innerHTML = "Status: Monitoring activity...";
+            statusEl.textContent = "Status: Monitoring activity...";
         }
-
     }, 1000);
 
     // Simulated guardian notification
@@ -70,5 +67,3 @@
 
 </body>
 </html>
-
-
