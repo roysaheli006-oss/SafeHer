@@ -3,68 +3,12 @@
 <html>
 <head>
     <title>Fake Call</title>
-    <style>
-        body {
-            background: #111; /* neutral dark background */
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
-        }
-
-        #incoming {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #00ff95;
-    animation: pulse 1.5s infinite;
-    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
-}
+<link rel="stylesheet" href="style.css">
 
 
-        @keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
-}
-
-        #caller {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            font-size: 20px;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            margin: 15px;
-            cursor: pointer;
-        }
-
-        .accept { background: #00c853; color: white; }
-        .decline { background: #d50000; color: white; }
-
-        .end-msg {
-            font-size: 28px;
-            margin-top: 40px;
-            color: #ff7676;
-        }
-
-        .home-btn {
-            background: #d10062;
-            color: white; 
-            padding: 10px 15px; 
-            border: none; 
-            border-radius: 8px;
-            font-size: 16px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-<body>
+<body id="fakecall-page">
 
 <div id="call-screen">
     <p id="incoming">Incoming Call…</p>
@@ -115,4 +59,3 @@
 
 </body>
 </html>
-
