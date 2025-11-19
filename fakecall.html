@@ -1,58 +1,59 @@
-<!-- Updated Fakecall. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Call</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Call</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body id="fakecall-page">
 
-    <div id="call-screen">
-        <div id="incoming">Incoming Call…</div>
-        <img id="caller-img" src="https://via.placeholder.com/150" alt="Caller">
-        <div id="caller">Unknown</div>
+<div id="call-screen">
+    <div class="top-text"><span id="caller">Unknown</span> is calling…</div>
 
-        <div class="buttons">
-            <button class="btn decline" onclick="declineCall()">Decline</button>
-            <button class="btn accept" onclick="acceptCall()">Accept</button>
-        </div>
+    <div class="options">
+        <div class="option">Remind Me</div>
+        <div class="option">Message</div>
     </div>
 
-    <div id="end-screen" style="display:none;">
-        <p class="end-msg">Call Ended</p>
-        <a href="homepage.html"><button class="home-btn">Back to Home</button></a>
+    <div class="buttons">
+        <button class="btn decline" onclick="declineCall()">Decline</button>
+        <button class="btn accept" onclick="acceptCall()">Accept</button>
     </div>
+</div>
 
-    <audio id="ringtone" src="original_iphone.mp3" loop></audio>
+<div id="end-screen" style="display:none;">
+    <p class="end-msg">Call Ended</p>
+    <a href="homepage.html"><button class="home-btn">Back to Home</button></a>
+</div>
 
-    <script>
-        const audio = document.getElementById("ringtone");
+<audio id="ringtone" src="original_iphone.mp3" loop></audio>
 
-        // Alert user to tap
-        window.onload = function() {
-            alert("Tap anywhere on the screen to start the fake call!");
-        };
+<script>
+const audio = document.getElementById("ringtone");
 
-        // Play ringtone on first tap
-        document.body.addEventListener("click", () => {
-            audio.play().catch(() => console.log("Autoplay blocked"));
-        }, { once: true });
+// Tap to play ringtone
+window.onload = function() {
+    alert("Tap anywhere to start the fake call!");
+};
 
-        function acceptCall() {
-            audio.pause();
-            audio.currentTime = 0;
-            alert("Call Connected! (Fake call 😌)");
-        }
+document.body.addEventListener("click", () => {
+    audio.play().catch(() => console.log("Autoplay blocked"));
+}, { once: true });
 
-        function declineCall() {
-            audio.pause();
-            audio.currentTime = 0;
-            document.getElementById("call-screen").style.display = "none";
-            document.getElementById("end-screen").style.display = "flex";
-        }
-    </script>
+function acceptCall() {
+    audio.pause();
+    audio.currentTime = 0;
+    alert("Call Connected! (Fake call 😌)");
+}
+
+function declineCall() {
+    audio.pause();
+    audio.currentTime = 0;
+    document.getElementById("call-screen").style.display = "none";
+    document.getElementById("end-screen").style.display = "flex";
+}
+</script>
 
 </body>
 </html>
