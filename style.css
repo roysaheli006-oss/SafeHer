@@ -1,13 +1,11 @@
 /*-- Updated Homepage. --*/
 /* ------------------- General Body ------------------- */
 body {
-    background: url('../background.png');
+    background: url('../background.png') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     font-family: "Poppins", sans-serif;
     margin: 0;
-    padding: 20px;   /* mobile-friendly padding */
+    padding: 20px;   
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,11 +14,15 @@ body {
 }
 
 /* ------------------- Container ------------------- */
-.container {
+.container, .box, .sos-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 15px rgba(255, 170, 200, 0.4);
     text-align: center;
-    width: 100%;
-    max-width: 400px;  /* keeps layout narrow on mobile */
-    margin: 0 auto;
 }
 
 /* ------------------- Titles ------------------- */
@@ -47,25 +49,25 @@ body {
 }
 
 /* ------------------- Buttons ------------------- */
-.home-btn, .action-btn {
+.home-btn, .action-btn, .sos-btn, .back-btn, .btn {
     text-decoration: none;
     font-size: 1rem;
-    padding: 12px 0;         /* tall for touch */
-    border-radius: 20px;     /* pill shape */
-    background: #fff7fa;     /* soft creamy-white */
-    color: #d63384;          /* cute pink text */
+    padding: 12px 0;
+    border-radius: 25px; 
+    background: #fff7fa; 
+    color: #d63384; 
     border: 2px solid #ffb3d9;
     font-weight: 600;
-    width: 80%;              /* responsive width */
-    max-width: 220px;        /* never too big */
-    margin: 0 auto;
+    width: 90%; 
+    max-width: 250px;
+    margin: 10px auto;
     display: block;
     box-shadow: 0 4px 12px rgba(255, 170, 200, 0.4);
     transition: 0.3s ease;
     cursor: pointer;
 }
 
-.home-btn:hover, .action-btn:hover {
+.home-btn:hover, .action-btn:hover, .sos-btn:hover, .back-btn:hover {
     background: #ffe3ef;
     transform: scale(1.05);
 }
@@ -99,13 +101,7 @@ body {
     color: #ff7676;
 }
 
-/* ------------------- Media Queries (Tablet/Laptop) ------------------- */
-@media (min-width: 768px) {
-    .title { font-size: 3rem; }
-    .subtitle { font-size: 1.2rem; }
-    .home-btn, .action-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
-}
-/* Hamburger icon */
+/* ------------------- Hamburger Icon & Side Menu ------------------- */
 .hamburger {
     font-size: 2rem;
     position: fixed;
@@ -116,14 +112,13 @@ body {
     z-index: 1000;
 }
 
-/* Side menu panel */
 .side-menu {
     height: 100%;
     width: 0;
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #fff0f5; /* soft pink panel */
+    background-color: #fff0f5; 
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
@@ -133,7 +128,7 @@ body {
 
 .side-menu a {
     display: block;
-    padding: 12px 30px;
+    padding: 16px 30px; 
     font-size: 1.2rem;
     color: #d63384;
     text-decoration: none;
@@ -146,13 +141,71 @@ body {
     border-radius: 8px;
 }
 
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2rem;
+/* ------------------- Media Queries ------------------- */
+@media (min-width: 768px) {
+    .title { font-size: 3rem; }
+    .subtitle { font-size: 1.2rem; }
+    .home-btn, .action-btn, .sos-btn, .back-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
 }
-.side-menu a {
-    padding: 16px 30px;  /* slightly taller touch area */
+/* Fake Call Page */
+#fakecall-page {
+    padding: 0;  /* remove extra top padding */
+    background: #111;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
+/* Make call and end screens full width and height on mobile */
+#fakecall-page #call-screen, 
+#fakecall-page #end-screen {
+    width: 100%;
+    height: 100vh;           /* full screen */
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;        /* remove rounded corners for full-screen feel */
+    background: #111;        /* match page background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;        /* remove shadow */
+}
+
+/* Incoming and caller text bigger and centered */
+#fakecall-page #incoming {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+#fakecall-page #caller {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+/* Buttons bigger for touch on mobile */
+#fakecall-page .btn {
+    width: 70%;
+    max-width: 300px;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    margin: 10px 0;
+}
+
+/* End message and home button */
+#fakecall-page .end-msg {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+#fakecall-page .home-btn {
+    width: 70%;
+    max-width: 300px;
+    font-size: 1.3rem;
+    padding: 12px 0;
+}
