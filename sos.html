@@ -113,11 +113,26 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    document.getElementById("output").innerHTML =
+    const output = document.getElementById("output");
+    
+    // Show coordinates
+    output.innerHTML =
         "<h3>Your Location:</h3>" +
         "Latitude: <b>" + position.coords.latitude + "</b><br>" +
-        "Longitude: <b>" + position.coords.longitude + "</b><br><br>" +
-        "<i>Simulating sending alert to emergency contacts...</i>";
+        "Longitude: <b>" + position.coords.longitude + "</b><br>";
+
+    // Simulate sending alert
+    const alertText = document.createElement("p");
+    alertText.innerHTML = "<i>Sending alert to emergency contacts...</i>";
+    alertText.style.color = "#d63384";
+    alertText.style.fontWeight = "600";
+    output.appendChild(alertText);
+
+    // Flashing effect
+    alertText.animate([{opacity:1},{opacity:0.5},{opacity:1}], {duration:800, iterations:3});
+
+    // **Open Google Maps with your location**
+    window.open(`https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`, '_blank');
 }
 
 function showError(error) {
