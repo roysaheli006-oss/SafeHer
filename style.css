@@ -147,71 +147,223 @@ body {
     .subtitle { font-size: 1.2rem; }
     .home-btn, .action-btn, .sos-btn, .back-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
 }
+/* ------------------- General Body ------------------- */
+body {
+    background: url('../background.png') no-repeat center center;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;   
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* ------------------- Container ------------------- */
+.container, .box, .sos-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 15px rgba(255, 170, 200, 0.4);
+    text-align: center;
+}
+
+/* ------------------- Titles ------------------- */
+.title {
+    font-size: 2.5rem; 
+    color: #ff77aa;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 #ffbfd6;
+}
+
+.subtitle {
+    font-size: 1rem; 
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* ------------------- Button Grid ------------------- */
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+/* ------------------- Buttons ------------------- */
+.home-btn, .action-btn, .sos-btn, .back-btn, .btn {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px 0;
+    border-radius: 25px; 
+    background: #fff7fa; 
+    color: #d63384; 
+    border: 2px solid #ffb3d9;
+    font-weight: 600;
+    width: 90%; 
+    max-width: 250px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(255, 170, 200, 0.4);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.home-btn:hover, .action-btn:hover, .sos-btn:hover, .back-btn:hover {
+    background: #ffe3ef;
+    transform: scale(1.05);
+}
+
+/* ------------------- Incoming Call Text ------------------- */
+#incoming {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00ff95;
+    animation: pulse 1.5s infinite;
+    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* ------------------- Caller Name ------------------- */
+#caller {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* ------------------- End Message ------------------- */
+.end-msg {
+    font-size: 28px;
+    margin-top: 40px;
+    color: #ff7676;
+}
+
+/* ------------------- Hamburger Icon & Side Menu ------------------- */
+.hamburger {
+    font-size: 2rem;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #d63384;
+    z-index: 1000;
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff0f5; 
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: -4px 0 15px rgba(255, 170, 200, 0.4);
+    z-index: 999;
+}
+
+.side-menu a {
+    display: block;
+    padding: 16px 30px; 
+    font-size: 1.2rem;
+    color: #d63384;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.side-menu a:hover {
+    background: #ffe3ef;
+    border-radius: 8px;
+}
+
+/* ------------------- Media Queries ------------------- */
+@media (min-width: 768px) {
+    .title { font-size: 3rem; }
+    .subtitle { font-size: 1.2rem; }
+    .home-btn, .action-btn, .sos-btn, .back-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
+}
 /* ------------------- Fake Call Page ------------------- */
 #fakecall-page {
     margin: 0;
     padding: 0;
-    background: black;
+    background: #111;
     color: white;
+    text-align: center;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------- Call & End Screens ------------------- */
+#fakecall-page #call-screen,
+#fakecall-page #end-screen {
+    width: 100%;
+    min-height: 100vh; /* changed from height: 100vh */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Full screen call & end screens */
-#call-screen, #end-screen {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 20px;
-    text-align: center;
+/* ------------------- Incoming & Caller ------------------- */
+#incoming {
+    font-size: 3rem;
+    color: #00ff95;
+    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
 }
 
-/* Top caller text */
-.top-text {
-    font-size: 2rem;
-    margin-top: 50px;
+#caller {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
 
-/* Options like iPhone */
-.options {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-top: 20px;
+#caller-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 3px solid #00ff95;
 }
 
-.option {
-    color: white;
-    font-size: 1rem;
-    opacity: 0.7;
-}
-
-/* Buttons */
+/* ------------------- Buttons ------------------- */
 .buttons {
     display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 50px;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
 }
 
 .btn {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     border: none;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     transition: transform 0.2s;
 }
 
@@ -222,20 +374,90 @@ body {
 .accept { background: #00c853; color: white; }
 .decline { background: #d50000; color: white; }
 
-/* End screen */
+/* ------------------- End Screen ------------------- */
 .end-msg {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 30px;
 }
 
 .home-btn {
+    font-size: 1.5rem;
+    padding: 15px 0;
     width: 70%;
     max-width: 250px;
-    font-size: 1.3rem;
-    padding: 12px 0;
     background: #d10062;
     color: white;
     border-radius: 15px;
     border: none;
+    cursor: pointer;
 }
 
+/* ------------------- Pulse Animation ------------------- */
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* ------------------- Mobile Responsiveness ------------------- */
+/* ------------------- Mobile & Small Screens ------------------- */
+@media (max-width: 500px) {
+    /* Incoming & Caller Text */
+    #incoming {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    #caller {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    /* Caller Image */
+    #caller-img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    /* Options */
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .option {
+        font-size: 1.2rem;
+    }
+
+    /* Buttons */
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+        width: 60%;
+        justify-content: center;
+    }
+    .btn {
+        width: 90px;
+        height: 90px;
+        font-size: 1.2rem;
+    }
+
+    /* End Screen */
+    .end-msg {
+        font-size: 2rem;
+    }
+    .home-btn {
+        font-size: 1.2rem;
+        width: 80%;
+        max-width: 200px;
+        padding: 8px 0;
+    }
+}
+
+/* Optional: very tiny screens */
+@media (max-width: 350px) {
+    #incoming { font-size: 1.8rem; }
+    #caller { font-size: 2rem; }
+    .btn { width: 80px; height: 80px; font-size: 1rem; }
+}
