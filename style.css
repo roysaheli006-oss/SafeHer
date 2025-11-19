@@ -185,7 +185,7 @@ html, body {
     font-size: 3rem;
     color: #00ff95;
     text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     animation: pulse 1.5s infinite;
 }
 
@@ -277,11 +277,11 @@ html, body {
     /* Incoming & Caller Text */
     #incoming {
         font-size: 2rem;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     #caller {
         font-size: 2.5rem;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     /* Caller Image */
@@ -294,25 +294,36 @@ html, body {
     /* Options */
     .options {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 25px;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 30px;
     }
     .option {
         font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
     }
 
     /* Buttons */
     .buttons {
-        /*flex-direction: column;*/
-        gap: 20px;
-        width: 80%;
+        display:flex;
+        gap: 40px;
+        /*width: 80%;*/
         justify-content: center;
     }
     .btn {
-        width: 90px;
-        height: 90px;
-        font-size: 1.2rem;
+        width: 120px;
+        height: 120px;
+        border-radius:50%
+        font-size: 1.6rem;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        transition: transform 0.2s;
     }
 
     /* End Screen */
@@ -419,6 +430,7 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
 
 
