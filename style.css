@@ -10,14 +10,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden; /* hides scrollbars and blocks scrolling */
 }
 
 /* ------------------- Container ------------------- */
 .container, .box, .sos-container {
-    width: 90%;
-    max-width: 500px;      /* bigger width */
+    width: 85%;
+    max-width: 450px;      /* bigger width */
     margin: 60px auto;      /* more space from top and bottom */
-    padding: 35px;          /* more inner space */
+    padding: 30px;          /* more inner space */
     border-radius: 20px;    /* slightly rounder corners for a softer look */
     background: rgba(255,255,255,0.95);
     box-shadow: 0 6px 20px rgba(255, 170, 200, 0.4);  /* deeper shadow */
@@ -402,5 +403,6 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
 
