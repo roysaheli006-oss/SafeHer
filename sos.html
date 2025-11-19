@@ -18,16 +18,19 @@
         align-items: flex-start; /* keeps the container a bit from top */
     }
         .sos-container {
-            background: rgba(255, 255, 255, 0.7);
-            width: 90%;
-            max-width: 380px;
-            margin: 80px auto;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(255, 150, 190, 0.35);
-            text-align: center;
-            backdrop-filter: blur(6px);
-        }
+    background: rgba(255, 255, 255, 0.95); /* stronger opacity */
+    width: 90%;
+    max-width: 500px;       /* bigger */
+    margin: 60px auto;      /* more space from top */
+    padding: 35px;          /* more inner space */
+    border-radius: 20px;    
+    box-shadow: 0 6px 20px rgba(255, 170, 200, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+}
 
         h2 {
             color: #d63384;
@@ -143,3 +146,4 @@ function showError(error) {
 
 </body>
 </html>
+
