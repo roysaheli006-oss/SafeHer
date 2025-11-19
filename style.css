@@ -147,65 +147,114 @@ body {
     .subtitle { font-size: 1.2rem; }
     .home-btn, .action-btn, .sos-btn, .back-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
 }
-/* Fake Call Page */
+/* ------------------- Fake Call Page ------------------- */
 #fakecall-page {
-    padding: 0;  /* remove extra top padding */
+    margin: 0;
+    padding: 0;
     background: #111;
     color: white;
     text-align: center;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
 }
 
-/* Make call and end screens full width and height on mobile */
-#fakecall-page #call-screen, 
+/* ------------------- Call & End Screens ------------------- */
+#fakecall-page #call-screen,
 #fakecall-page #end-screen {
     width: 100%;
-    height: 100vh;           /* full screen */
-    margin: 0;
-    padding: 20px;
-    border-radius: 0;        /* remove rounded corners for full-screen feel */
-    background: #111;        /* match page background */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: none;        /* remove shadow */
 }
 
-/* Incoming and caller text bigger and centered */
-#fakecall-page #incoming {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-#fakecall-page #caller {
+/* ------------------- Incoming & Caller ------------------- */
+#incoming {
     font-size: 3rem;
+    color: #00ff95;
+    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+#caller {
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-/* Buttons bigger for touch on mobile */
-#fakecall-page .btn {
-    width: 70%;
-    max-width: 300px;
-    font-size: 1.5rem;
-    padding: 15px 0;
-    margin: 10px 0;
+#caller-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 3px solid #00ff95;
 }
 
-/* End message and home button */
-#fakecall-page .end-msg {
-    font-size: 2rem;
+/* ------------------- Buttons ------------------- */
+.buttons {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.accept { background: #00c853; color: white; }
+.decline { background: #d50000; color: white; }
+
+/* ------------------- End Screen ------------------- */
+.end-msg {
+    font-size: 3rem;
     margin-bottom: 30px;
 }
 
-#fakecall-page .home-btn {
+.home-btn {
+    font-size: 1.5rem;
+    padding: 15px 0;
     width: 70%;
-    max-width: 300px;
-    font-size: 1.3rem;
-    padding: 12px 0;
+    max-width: 250px;
+    background: #d10062;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ------------------- Pulse Animation ------------------- */
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* ------------------- Mobile Responsiveness ------------------- */
+@media (max-width: 400px) {
+    #incoming { font-size: 2.2rem; }
+    #caller { font-size: 3rem; }
+    .btn { width: 100px; height: 100px; font-size: 1.3rem; }
+    #caller-img { width: 120px; height: 120px; }
 }
