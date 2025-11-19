@@ -1,7 +1,7 @@
 /* ------------------- General Body ------------------- */
 body {
     background: url('../background.png') no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 20px;   
@@ -402,4 +402,5 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
