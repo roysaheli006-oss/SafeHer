@@ -9,20 +9,30 @@
 <body id="fakecall-page">
 
 <div id="call-screen">
-    <div class="top-text">
-        <span id="caller">Unknown</span> <br>calling…</br>
+    <!-- Top section -->
+    <div class="call-top">
+        <div id="caller">Unknown</div>
+        <div id="incoming">Calling…</div>
     </div>
 
-    <div class="buttons">
-    <div class="btn-stack">
-        <div class="btn-label">Remind Me</div>
-        <button class="btn decline" onclick="declineCall()">Decline</button>
-    </div>
-    <div class="btn-stack">
-        <div class="btn-label">Message</div>
-        <button class="btn accept" onclick="acceptCall()">Accept</button>
+    <!-- Bottom section -->
+    <div class="call-bottom">
+        <div class="btn-stack">
+            <div class="btn-label">Remind Me</div>
+            <button class="btn decline" onclick="declineCall()">Decline</button>
+        </div>
+        <div class="btn-stack">
+            <div class="btn-label">Message</div>
+            <button class="btn accept" onclick="acceptCall()">Accept</button>
+        </div>
     </div>
 </div>
+
+<div id="end-screen" style="display:none;">
+    <p class="end-msg">Call Ended</p>
+    <a href="homepage.html"><button class="home-btn">Back to Home</button></a>
+</div>
+
 
 
 <div id="end-screen" style="display:none;">
@@ -61,6 +71,7 @@ function declineCall() {
 
 </body>
 </html>
+
 
 
 
