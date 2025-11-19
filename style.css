@@ -151,71 +151,67 @@ body {
 #fakecall-page {
     margin: 0;
     padding: 0;
-    background: #111;
+    background: black;
     color: white;
-    text-align: center;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-/* ------------------- Call & End Screens ------------------- */
-#fakecall-page #call-screen,
-#fakecall-page #end-screen {
+/* Full screen call & end screens */
+#call-screen, #end-screen {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-/* ------------------- Incoming & Caller ------------------- */
-#incoming {
-    font-size: 3rem;
-    color: #00ff95;
-    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
-    margin-bottom: 20px;
-    animation: pulse 1.5s infinite;
+/* Top caller text */
+.top-text {
+    font-size: 2rem;
+    margin-top: 50px;
 }
 
-#caller {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 40px;
+/* Options like iPhone */
+.options {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
 }
 
-#caller-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-    border: 3px solid #00ff95;
+.option {
+    color: white;
+    font-size: 1rem;
+    opacity: 0.7;
 }
 
-/* ------------------- Buttons ------------------- */
+/* Buttons */
 .buttons {
     display: flex;
-    gap: 40px;
-    width: 100%;
-    justify-content: center;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 50px;
 }
 
 .btn {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: transform 0.2s;
 }
 
@@ -226,35 +222,20 @@ body {
 .accept { background: #00c853; color: white; }
 .decline { background: #d50000; color: white; }
 
-/* ------------------- End Screen ------------------- */
+/* End screen */
 .end-msg {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
 .home-btn {
-    font-size: 1.5rem;
-    padding: 15px 0;
     width: 70%;
     max-width: 250px;
+    font-size: 1.3rem;
+    padding: 12px 0;
     background: #d10062;
     color: white;
     border-radius: 15px;
     border: none;
-    cursor: pointer;
 }
 
-/* ------------------- Pulse Animation ------------------- */
-@keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
-}
-
-/* ------------------- Mobile Responsiveness ------------------- */
-@media (max-width: 400px) {
-    #incoming { font-size: 2.2rem; }
-    #caller { font-size: 3rem; }
-    .btn { width: 100px; height: 100px; font-size: 1.3rem; }
-    #caller-img { width: 120px; height: 120px; }
-}
