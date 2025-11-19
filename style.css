@@ -176,8 +176,9 @@ html, body {
     height: 100%; /* changed from height: 100vh */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 40px 0;
 }
 
 /* ------------------- Incoming & Caller ------------------- */
@@ -423,6 +424,7 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
 
 
