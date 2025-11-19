@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guardian Mode</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra guardian-specific tweaks */
+        .box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 170, 200, 0.4);
+            width: 90%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #status {
+            font-weight: bold;
+            color: #d10062;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">Guardian Mode Activated</h1>
+
+    <div class="box">
+        <p><b>Live Location (Simulated)</b></p>
+        <p id="lat">Latitude: Loading...</p>
+        <p id="lon">Longitude: Loading...</p>
+
+        <p id="status">Status: Monitoring activity...</p>
+
+        <button class="action-btn" onclick="notifyGuardian()">Notify Guardian</button>
+    </div>
+
+    <a href="homepage.html" class="home-btn" style="margin-top:30px;">Back to Home</a>
+</div>
+
+<script>
+    // Simulated live location (moves slightly every 3 seconds)
+    let lat = 22.5726;
+    let lon = 88.3639;
+
+    function updateLocation() {
+        lat += (Math.random() - 0.5) / 500;
+        lon += (Math.random() - 0.5) / 500;
+
+        document.getElementById("lat").innerHTML = "Latitude: " + lat.toFixed(6);
+        document.getElementById("lon").innerHTML = "Longitude: " + lon.toFixed(6);
+    }
+
+    setInterval(updateLocation, 3000);
+    updateLocation();
+
+    // Detect inactivity → Fake distress after 10 sec
+    let lastMove = Date.now();
+
+    document.body.addEventListener("mousemove", () => lastMove = Date.now());
+    document.body.addEventListener("touchstart", () => lastMove = Date.now());
+
+    setInterval(() => {
+        let diff = Date.now() - lastMove;
+
+        if (diff > 10000) {
+            document.getElementById("status").innerHTML = "Status: ⚠ Possible distress detected!";
+        } else if (diff > 5000) {
+            document.getElementById("status").innerHTML = "Status: User inactive...";
+        } else {
+            document.getElementById("status").innerHTML = "Status: Monitoring activity...";
+        }
+
+    }, 1000);
+
+    // Simulated guardian notification
+    function notifyGuardian() {
+        alert("Guardian Notified! (Simulation)");
+    }
+</script>
+
+</body>
+</html>

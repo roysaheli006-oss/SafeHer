@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeHer - Settings</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    background: url('background.png');
+    background-size: cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(255,170,200,0.4);
+}
+
+h1.title {
+    font-family: 'Cursive', sans-serif;
+    font-size: 2.4rem;
+    color: #d63384;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #ffbfd6;
+}
+
+p.message {
+    font-size: 1.2rem;
+    color: #ff77aa;
+    margin: 20px 0;
+}
+
+.action-btn {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #fff7fa;
+    border: 2px solid #ffb3d9;
+    border-radius: 12px;
+    color: #d63384;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #ffe3ef;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">Settings</h1>
+    <p class="message">Dude, this is a 'demo prototype', not a real app! How much are you expecting?? 😜</p>
+    <button class="action-btn" onclick="goHome()">Back to Home</button>
+</div>
+
+<script>
+function goHome() {
+    window.location.href = "homepage.html";
+}
+</script>
+
+</body>
+</html>

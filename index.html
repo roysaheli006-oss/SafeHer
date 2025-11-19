@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeHer - Login/Register</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background: url('background.png');
+        background-size: cover;
+        background-position: center;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+
+    h1.title {
+        font-family: 'Cursive', sans-serif; /* signature font */
+        font-size: 2.8rem;
+        color: #d63384;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 0 #ffbfd6;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .form-box {
+        background: rgba(255,255,255,0.95);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(255,170,200,0.4);
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 1px solid #ffb3d9;
+        font-size: 1rem;
+    }
+
+    .action-btn {
+        width: 95%;
+        padding: 12px;
+        margin-top: 10px;
+        background: #fff7fa;
+        border: 2px solid #ffb3d9;
+        border-radius: 12px;
+        color: #d63384;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .action-btn:hover {
+        background: #ffe3ef;
+        transform: scale(1.05);
+    }
+
+    .forgot {
+        font-size: 0.9rem;
+        color: #d63384;
+        cursor: pointer;
+        margin-top: 10px;
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="title">Welcome to SafeHer</h1>
+<p class="subtitle">Your cute little Safety Toolbox 💖</p>
+
+<div class="form-box" id="main-box">
+    <button class="action-btn" onclick="showLogin()">Log In</button>
+    <button class="action-btn" onclick="showRegister()">Sign Up</button>
+</div>
+
+<script>
+function showRegister() {
+    document.getElementById("main-box").innerHTML = `
+    <h2>Register</h2>
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="text" id="phone" placeholder="Your Phone Number" required><br>
+    <input type="password" id="password" placeholder="Set a Password" required><br>
+    <input type="text" id="guardianName" placeholder="Guardian's Name" required><br>
+    <input type="text" id="guardianPhone" placeholder="Guardian's Phone Number" required><br>
+    <input type="text" id="securityAnswer" placeholder="Security Question: type birthdates (xx-yy-ZZ)" required><br>
+    <button class="action-btn" onclick="registerUser()">Register</button>
+    <button class="action-btn" onclick="backToMain()">Back</button>
+`;
+
+}
+
+function showLogin() {
+    document.getElementById("main-box").innerHTML = `
+        <h2>Log In</h2>
+        <input type="text" id="loginPhone" placeholder="Phone Number" required><br>
+        <input type="password" id="loginPassword" placeholder="Password" required><br>
+        <button class="action-btn" onclick="loginUser()">Log In</button>
+        <span class="forgot" onclick="forgotPassword()">Forgot Password?</span>
+        <button class="action-btn" onclick="backToMain()">Back</button>
+    `;
+}
+
+function backToMain() {
+    document.getElementById("main-box").innerHTML = `
+        <button class="action-btn" onclick="showLogin()">Log In</button>
+        <button class="action-btn" onclick="showRegister()">Sign Up</button>
+    `;
+}
+
+// Registration
+function registerUser() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const guardianName = document.getElementById("guardianName").value;
+    const guardianPhone = document.getElementById("guardianPhone").value;
+    const securityAnswer = document.getElementById("securityAnswer").value;
+
+    const password = document.getElementById("password").value;
+
+if(!name || !phone || !password || !guardianName || !guardianPhone || !securityAnswer) {
+    alert("Please fill all fields!");
+    return;
+}
+
+localStorage.setItem("name", name);
+localStorage.setItem("phone", phone);
+localStorage.setItem("password", password); // store user-chosen password
+localStorage.setItem("guardianName", guardianName);
+localStorage.setItem("guardianPhone", guardianPhone);
+localStorage.setItem("securityAnswer", securityAnswer);
+
+alert("Registration successful! You can now log in.");
+showLogin();
+}
+
+// Login
+function loginUser() {
+    const loginPhone = document.getElementById("loginPhone").value;
+    const loginPassword = document.getElementById("loginPassword").value;
+
+    const storedPhone = localStorage.getItem("phone");
+    const storedPassword = localStorage.getItem("password");
+
+    if(loginPhone === storedPhone && loginPassword === storedPassword){
+        alert("Login successful!");
+        window.location.href = "homepage.html";
+    } else {
+        alert("Incorrect credentials!");
+    }
+}
+
+// Forgot Password
+function forgotPassword() {
+    const answer = prompt("Security Question: type birthdates (xx-yy-ZZ)");
+    const storedAnswer = localStorage.getItem("securityAnswer");
+
+    if(answer === storedAnswer){
+        alert("Your password is: " + localStorage.getItem("password"));
+    } else {
+        alert("Incorrect answer!");
+    }
+}
+</script>
+
+</body>
+</html>

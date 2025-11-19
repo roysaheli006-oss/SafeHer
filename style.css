@@ -1,0 +1,156 @@
+/* ------------------- General Body ------------------- */
+body {
+    background: url('../background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;   /* mobile-friendly padding */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* ------------------- Container ------------------- */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;  /* keeps layout narrow on mobile */
+    margin: 0 auto;
+}
+
+/* ------------------- Titles ------------------- */
+.title {
+    font-size: 2.5rem; 
+    color: #ff77aa;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 #ffbfd6;
+}
+
+.subtitle {
+    font-size: 1rem; 
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* ------------------- Button Grid ------------------- */
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+/* ------------------- Buttons ------------------- */
+.home-btn, .action-btn {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px 0;         /* tall for touch */
+    border-radius: 20px;     /* pill shape */
+    background: #fff7fa;     /* soft creamy-white */
+    color: #d63384;          /* cute pink text */
+    border: 2px solid #ffb3d9;
+    font-weight: 600;
+    width: 80%;              /* responsive width */
+    max-width: 220px;        /* never too big */
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(255, 170, 200, 0.4);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.home-btn:hover, .action-btn:hover {
+    background: #ffe3ef;
+    transform: scale(1.05);
+}
+
+/* ------------------- Incoming Call Text ------------------- */
+#incoming {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00ff95;
+    animation: pulse 1.5s infinite;
+    text-shadow: 0 0 10px #00ff95, 0 0 20px #00ff95;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* ------------------- Caller Name ------------------- */
+#caller {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* ------------------- End Message ------------------- */
+.end-msg {
+    font-size: 28px;
+    margin-top: 40px;
+    color: #ff7676;
+}
+
+/* ------------------- Media Queries (Tablet/Laptop) ------------------- */
+@media (min-width: 768px) {
+    .title { font-size: 3rem; }
+    .subtitle { font-size: 1.2rem; }
+    .home-btn, .action-btn { width: 50%; font-size: 1.1rem; max-width: 250px; }
+}
+/* Hamburger icon */
+.hamburger {
+    font-size: 2rem;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #d63384;
+    z-index: 1000;
+}
+
+/* Side menu panel */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff0f5; /* soft pink panel */
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: -4px 0 15px rgba(255, 170, 200, 0.4);
+    z-index: 999;
+}
+
+.side-menu a {
+    display: block;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: #d63384;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.side-menu a:hover {
+    background: #ffe3ef;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+}
+.side-menu a {
+    padding: 16px 30px;  /* slightly taller touch area */
+}

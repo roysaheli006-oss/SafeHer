@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeHer - About</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    background: url('background.png');
+    background-size: cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(255,170,200,0.4);
+}
+
+h1.title {
+    font-family: 'Cursive', sans-serif;
+    font-size: 2.4rem;
+    color: #d63384;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #ffbfd6;
+}
+
+p.description, p.team {
+    font-size: 1rem;
+    color: #ff77aa;
+    margin: 15px 0;
+    text-align: left;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.action-btn {
+    width: 90%;
+    padding: 12px;
+    margin: 15px 0 0 0;
+    background: #fff7fa;
+    border: 2px solid #ffb3d9;
+    border-radius: 12px;
+    color: #d63384;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #ffe3ef;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">About SafeHer</h1>
+    <p class="description">
+        SafeHer is a web-based women’s safety prototype designed to provide quick and practical emergency support through SOS alerts, fake calls, and Guardian Mode.  
+        This prototype emphasizes speed, accessibility, and simplicity, and demonstrates the logic behind a real safety tool.
+    </p>
+
+    <p class="team"><b>Team Anonymous:</b></p>
+    <ul>
+        <li>Aditya Bhattacharjee</li>
+        <li>Ashraf Ali</li>
+        <li>Kris Kumar Jha</li>
+        <li>Sanjukta Nag</li>
+        <li>Saheli Roy</li>
+        <li>Subhojit Roy</li>
+        <li>Sumit Raj</li>
+    </ul>
+
+    <p class="description">
+        This prototype is a collective effort of our team to showcase innovative ideas in women’s safety.
+    </p>
+
+    <button class="action-btn" onclick="goHome()">Back to Home</button>
+</div>
+
+<script>
+function goHome() {
+    window.location.href = "homepage.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeHer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hamburger Icon */
+        .hamburger {
+            font-size: 2rem;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color: #d63384;
+            z-index: 1000;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #fff0f5; /* soft pink panel */
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: -4px 0 15px rgba(255, 170, 200, 0.4);
+            z-index: 999;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 16px 30px;
+            font-size: 1.2rem;
+            color: #d63384;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: 0.2s;
+        }
+
+        .side-menu a:hover {
+            background: #ffe3ef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776; <!-- three-line icon -->
+    </div>
+
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="account.html">Account</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+    </div>
+
+    <div class="container">
+        <h1 class="title">SafeHer</h1>
+        <p class="subtitle">Your cute little safety toolbox 💖</p>
+
+        <div class="button-grid">
+            <a href="sos.html" class="home-btn">SOS Alert</a>
+            <a href="fakecall.html" class="home-btn">Fake Call</a>
+            <a href="guardian.html" class="home-btn">Guardian</a>
+        </div>
+    </div>
+
+    <!-- JS for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("side-menu");
+            if (menu.style.width === "250px") {
+                menu.style.width = "0"; // closes menu
+            } else {
+                menu.style.width = "250px"; // opens menu
+            }
+        }
+    </script>
+
+</body>
+</html>
