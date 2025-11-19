@@ -170,8 +170,7 @@ html, body {
 }
 
 /* ------------------- Call & End Screens ------------------- */
-#fakecall-page #call-screen,
-#fakecall-page #end-screen {
+#fakecall-page #call-screen {
     width: 100%;
     height: 100%; /* changed from height: 100vh */
     display: flex;
@@ -180,6 +179,17 @@ html, body {
     align-items: center;
     padding: 40px 0;
 }
+    
+#fakecall-page #end-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* pushes button to bottom */
+    align-items: center;
+    padding-bottom: 60px; /* space from bottom edge */
+}
+    
 
 /* ------------------- Incoming & Caller ------------------- */
 /* Top section */
@@ -424,6 +434,7 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
 
 
