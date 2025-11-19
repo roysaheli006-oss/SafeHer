@@ -290,7 +290,7 @@ html, body {
 
     /* Buttons */
     .buttons {
-        flex-direction: column;
+        /*flex-direction: column;*/
         gap: 20px;
         width: 60%;
         justify-content: center;
@@ -405,5 +405,6 @@ p {
     .sos-container { margin: 40px 10px; padding: 20px; }
     .sos-btn, .back-btn { width: 90%; font-size: 1rem; padding: 10px 0; }
 }
+
 
 
